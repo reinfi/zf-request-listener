@@ -1,0 +1,24 @@
+{
+    "name": "reinfi/zf-request-listener",
+    "type": "library",
+    "description": "A Zend Framework 2 module for loading listeners only for http or console.",
+    "keywords": ["zend","listener", "console", "http"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Reinfi"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "zendframework/zend-modulemanager": "^2.8",
+        "zendframework/zend-http": "^2.6",
+        "zendframework/zend-console": "^2.6",
+        "zendframework/zend-eventmanager": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Reinfi\\RequestListener\\": "src/"
+        }
+    }
+}
