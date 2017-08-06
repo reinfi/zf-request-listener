@@ -62,7 +62,7 @@ class ListenerService
     /**
      *
      */
-    public function attachListener(): void
+    public function attachListener()
     {
         $this->attachConsoleListener();
         $this->attachHttpListener();
@@ -71,7 +71,7 @@ class ListenerService
     /**
      * return void
      */
-    private function attachConsoleListener(): void
+    private function attachConsoleListener()
     {
         if (!$this->request instanceof ConsoleRequest) {
             return;
@@ -86,7 +86,7 @@ class ListenerService
     /**
      * return void
      */
-    private function attachHttpListener(): void
+    private function attachHttpListener()
     {
         if (!$this->request instanceof HttpRequest) {
             return;

@@ -17,7 +17,7 @@ class Module implements InitProviderInterface, ConfigProviderInterface
     /**
      * @param ModuleManagerInterface $manager
      */
-    public function init(ModuleManagerInterface $manager): void
+    public function init(ModuleManagerInterface $manager)
     {
         $manager->getEventManager()->attach(
             ModuleEvent::EVENT_LOAD_MODULES_POST,
@@ -31,7 +31,7 @@ class Module implements InitProviderInterface, ConfigProviderInterface
     /**
      * @param ModuleEvent $event
      */
-    public function attachListener(ModuleEvent $event): void
+    public function attachListener(ModuleEvent $event)
     {
         /** @var ContainerInterface $container */
         $container = $event->getParam('ServiceManager');
