@@ -27,8 +27,8 @@ class ListenerServiceFactory
         /** @var array $config */
         $config = $container->get('Config');
 
-        $cliListener = isset($config['cli_listener']) ? $config['cli_listener'] : [];
-        $httpListener = isset($config['http_listener']) ? $config['http_listener'] : [];
+        $cliListener = isset($config['cli_listeners']) ? $config['cli_listeners'] : [];
+        $httpListener = isset($config['http_listeners']) ? $config['http_listeners'] : [];
 
         return new ListenerService(
             $container,
