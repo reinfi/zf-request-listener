@@ -16,7 +16,7 @@ class ListenerServiceFactory
      *
      * @return ListenerService
      */
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container): ListenerService
     {
         $application = $container->get('Application');
 
