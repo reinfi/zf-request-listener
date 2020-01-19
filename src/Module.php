@@ -4,10 +4,10 @@ namespace Reinfi\RequestListener;
 
 use Psr\Container\ContainerInterface;
 use Reinfi\RequestListener\Service\ListenerService;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\ModuleManager\Feature\InitProviderInterface;
-use Zend\ModuleManager\ModuleEvent;
-use Zend\ModuleManager\ModuleManagerInterface;
+use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+use Laminas\ModuleManager\Feature\InitProviderInterface;
+use Laminas\ModuleManager\ModuleEvent;
+use Laminas\ModuleManager\ModuleManagerInterface;
 
 /**
  * @package Reinfi\RequestListener

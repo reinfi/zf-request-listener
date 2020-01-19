@@ -3,10 +3,10 @@
 namespace Reinfi\RequestListener\Service;
 
 use Psr\Container\ContainerInterface;
-use Zend\EventManager\EventManagerInterface;
-use Zend\Stdlib\RequestInterface;
-use Zend\Http\Request as HttpRequest;
-use Zend\Console\Request as ConsoleRequest;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\Stdlib\RequestInterface;
+use Laminas\Http\Request as HttpRequest;
+use Laminas\Console\Request as ConsoleRequest;
 
 /**
  * @package Reinfi\RequestListener\Service

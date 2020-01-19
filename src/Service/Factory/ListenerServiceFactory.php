@@ -4,7 +4,7 @@ namespace Reinfi\RequestListener\Service\Factory;
 
 use Psr\Container\ContainerInterface;
 use Reinfi\RequestListener\Service\ListenerService;
-use Zend\Stdlib\RequestInterface;
+use Laminas\Stdlib\RequestInterface;
 
 /**
  * @package Reinfi\RequestListener\Service\Factory
