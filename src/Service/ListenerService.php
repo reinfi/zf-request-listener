@@ -6,7 +6,7 @@ use Psr\Container\ContainerInterface;
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\Stdlib\RequestInterface;
 use Laminas\Http\Request as HttpRequest;
-use Laminas\Console\Request as ConsoleRequest;
+use RuntimeException;
 
 /**
  * @package Reinfi\RequestListener\Service
@@ -41,7 +41,11 @@ class ListenerService
 
     private function attachConsoleListener(): void
     {
-        if (!$this->request instanceof ConsoleRequest) {
+        if (count($this->cliListener) > 0 && !class_exists('Laminas\Console\Request')) {
+            throw new RuntimeException('laminas/laminas-console is not installed');
+        }
+
+        if (!is_a($this->request, 'Laminas\Console\Request')) {
             return;
         }
 
