@@ -13,38 +13,12 @@ use Laminas\Console\Request as ConsoleRequest;
  */
 class ListenerService
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
+    private ContainerInterface $container;
+    private EventManagerInterface $eventManager;
+    private RequestInterface $request;
+    private array $cliListener;
+    private array $httpListener;
 
-    /**
-     * @var EventManagerInterface
-     */
-    private $eventManager;
-
-    /**
-     * @var RequestInterface
-     */
-    private $request;
-
-    /**
-     * @var array
-     */
-    private $cliListener;
-
-    /**
-     * @var array
-     */
-    private $httpListener;
-
-    /**
-     * @param ContainerInterface    $container
-     * @param EventManagerInterface $eventManager
-     * @param RequestInterface      $request
-     * @param array                 $cliListener
-     * @param array                 $httpListener
-     */
     public function __construct(
         ContainerInterface $container,
         EventManagerInterface $eventManager,
@@ -59,19 +33,13 @@ class ListenerService
         $this->httpListener = $httpListener;
     }
 
-    /**
-     *
-     */
-    public function attachListener()
+    public function attachListener(): void
     {
         $this->attachConsoleListener();
         $this->attachHttpListener();
     }
 
-    /**
-     * return void
-     */
-    private function attachConsoleListener()
+    private function attachConsoleListener(): void
     {
         if (!$this->request instanceof ConsoleRequest) {
             return;
@@ -82,11 +50,7 @@ class ListenerService
         }
     }
 
-
-    /**
-     * return void
-     */
-    private function attachHttpListener()
+    private function attachHttpListener(): void
     {
         if (!$this->request instanceof HttpRequest) {
             return;

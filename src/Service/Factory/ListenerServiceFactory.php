@@ -11,11 +11,6 @@ use Laminas\Stdlib\RequestInterface;
  */
 class ListenerServiceFactory
 {
-    /**
-     * @param ContainerInterface $container
-     *
-     * @return ListenerService
-     */
     public function __invoke(ContainerInterface $container): ListenerService
     {
         $application = $container->get('Application');
