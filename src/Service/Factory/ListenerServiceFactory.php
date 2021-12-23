@@ -11,11 +11,6 @@ use Laminas\Stdlib\RequestInterface;
  */
 class ListenerServiceFactory
 {
-    /**
-     * @param ContainerInterface $container
-     *
-     * @return ListenerService
-     */
     public function __invoke(ContainerInterface $container): ListenerService
     {
         $application = $container->get('Application');
@@ -27,8 +22,8 @@ class ListenerServiceFactory
         /** @var array $config */
         $config = $container->get('Config');
 
-        $cliListener = isset($config['cli_listeners']) ? $config['cli_listeners'] : [];
-        $httpListener = isset($config['http_listeners']) ? $config['http_listeners'] : [];
+        $cliListener = $config['cli_listeners'] ?? [];
+        $httpListener = $config['http_listeners'] ?? [];
 
         return new ListenerService(
             $container,

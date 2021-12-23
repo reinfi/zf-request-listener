@@ -1,7 +1,7 @@
 {
     "name": "reinfi/zf-request-listener",
     "type": "library",
-    "description": "A Zend Framework 2 module for loading listeners only for http or console.",
+    "description": "A laminas module for loading listeners only for http or console.",
     "keywords": [
         "zend",
         "listener",
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.4 | >= 8.0",
         "laminas/laminas-modulemanager": "~2.7",
         "laminas/laminas-http": "~2.6",
         "laminas/laminas-console": "~2.6",

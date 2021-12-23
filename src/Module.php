@@ -14,10 +14,7 @@ use Laminas\ModuleManager\ModuleManagerInterface;
  */
 class Module implements InitProviderInterface, ConfigProviderInterface
 {
-    /**
-     * @param ModuleManagerInterface $manager
-     */
-    public function init(ModuleManagerInterface $manager)
+    public function init(ModuleManagerInterface $manager): void
     {
         $manager->getEventManager()->attach(
             ModuleEvent::EVENT_LOAD_MODULES_POST,
@@ -28,10 +25,7 @@ class Module implements InitProviderInterface, ConfigProviderInterface
         );
     }
 
-    /**
-     * @param ModuleEvent $event
-     */
-    public function attachListener(ModuleEvent $event)
+    public function attachListener(ModuleEvent $event): void
     {
         /** @var ContainerInterface $container */
         $container = $event->getParam('ServiceManager');
@@ -39,9 +33,6 @@ class Module implements InitProviderInterface, ConfigProviderInterface
         $container->get(ListenerService::class)->attachListener();
     }
 
-    /**
-     * @return array
-     */
     public function getConfig(): array
     {
         return require __DIR__ . '/../config/module_config.php';
