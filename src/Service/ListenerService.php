@@ -5,7 +5,6 @@ namespace Reinfi\RequestListener\Service;
 use Psr\Container\ContainerInterface;
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\Stdlib\RequestInterface;
-use Laminas\Http\Request as HttpRequest;
 use RuntimeException;
 
 /**
@@ -56,7 +55,11 @@ class ListenerService
 
     private function attachHttpListener(): void
     {
-        if (!$this->request instanceof HttpRequest) {
+        if (count($this->httpListener) > 0 && !class_exists('Laminas\Http\Request')) {
+            throw new RuntimeException('laminas/laminas-http is not installed');
+        }
+
+        if (!is_a($this->request, 'Laminas\Http\Request')) {
             return;
         }
 

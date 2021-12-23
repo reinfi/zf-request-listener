@@ -15,12 +15,12 @@
         }
     ],
     "suggest": {
-        "laminas/laminas-console": "If you want to enable console request listener"
+        "laminas/laminas-console": "If you want to enable console request listener",
+        "laminas/laminas-http": "If you want to enable http request listener"
     },
     "require": {
         "php": ">=7.4 | >= 8.0",
         "laminas/laminas-modulemanager": "~2.7",
-        "laminas/laminas-http": "~2.6",
         "laminas/laminas-eventmanager": "~2.6 | ~3.2"
     },
     "autoload": {
