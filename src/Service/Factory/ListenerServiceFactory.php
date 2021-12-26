@@ -22,14 +22,12 @@ class ListenerServiceFactory
         /** @var array $config */
         $config = $container->get('Config');
 
-        $cliListener = $config['cli_listeners'] ?? [];
         $httpListener = $config['http_listeners'] ?? [];
 
         return new ListenerService(
             $container,
             $eventManager,
             $request,
-            $cliListener,
             $httpListener
         );
     }
