@@ -1,6 +1,16 @@
 Reinfi\RequestListener
 ==============
 
+### Deprecated
+
+This module is deprecated as laminas/laminas-mvc-console and laminas-console is deprecated.
+Using laminas-cli does not trigger any listeners.
+
+Move your `http_listener` to `listeners` in your configuration.
+
+### Description
+
+
 This module can add listeners only for HTTP or Console Requests.
 
 Installation
